@@ -16,6 +16,8 @@ namespace GameProces
 
         void FixedUpdate()
         {
+            if (Pause.pause)
+                return;
             transform.Translate(Vector2.up * _speed * Time.deltaTime);
 
             if (Vector2.Distance(_startPosition, transform.position) >= _distance)

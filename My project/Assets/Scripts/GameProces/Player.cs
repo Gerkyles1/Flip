@@ -25,6 +25,17 @@ namespace GameProces
 
         }
 
+        public void Continue()
+        {
+            foreach (var part in _playerParts)             
+                part.SetActive(true);
+
+            Pause.pause = false;
+
+
+            
+        }
+
         private bool _rotateClockwise = true;
 
 
@@ -36,8 +47,9 @@ namespace GameProces
 
         void Update()
         {
-
-            if (Input.GetMouseButtonDown(0))
+            if (Pause.pause)
+                return;
+            else if (Input.GetMouseButtonDown(0))
             {
                 _rotateClockwise = !_rotateClockwise;
                 Score._instance._audioSourceInstance.PlayFlip();
@@ -46,7 +58,7 @@ namespace GameProces
         private void FixedUpdate()
         {
 
-            if (Score._isGameOver)
+            if (Score._isGameOver || Pause.pause)
                 return;
 
             RotateObject();

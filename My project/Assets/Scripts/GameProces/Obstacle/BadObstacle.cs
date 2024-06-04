@@ -1,18 +1,20 @@
-using GameProces;
 using UnityEngine;
 
-public class BadObstacle : Obstacle
+namespace GameProces
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class BadObstacle : Obstacle
     {
-
-        if (collision.tag == "Player" && !Score._isGameOver)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            GameObject vfx = (GameObject)Resources.LoadAll("Prefabs/VFX")[0];
-            Instantiate(vfx, collision.transform.position, collision.transform.rotation);
-            Destroy(collision.gameObject);
-            Score._instance.SetGameOverTrue();
-        }
 
+            if (collision.tag == "Player" && !Score._isGameOver)
+            {
+                GameObject vfx = (GameObject)Resources.LoadAll("Prefabs/VFX")[0];
+                Destroy(Instantiate(vfx, collision.transform.position, collision.transform.rotation), 5f);
+                collision.gameObject.SetActive(false);
+                Score._instance.SetGameOverTrue();
+            }
+
+        }
     }
 }

@@ -24,9 +24,13 @@ Library: C:\unityProjects\My project\Temp\BurstOutput\tempburstlibs\armeabi-v7a\
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.TextMeshPro;
 --assembly-defines=Unity.VisualScripting.State;
+--assembly-defines=GoogleMobileAds.Common;
 --assembly-defines=Unity.Collections.LowLevel.ILSupport;
+--assembly-defines=GoogleMobileAds;
+--assembly-defines=GoogleMobileAds.Core;
 --assembly-defines=Unity.VisualScripting.Antlr3.Runtime;
 --assembly-defines=Unity.Burst.Unsafe;
+--assembly-defines=GoogleMobileAds.Android;
 --assembly-defines=System.Runtime;
 --assembly-defines=netstandard;
 --assembly-defines=Mono.Security;

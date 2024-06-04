@@ -22,7 +22,7 @@ namespace GameProces
         
         private void SpawnObstacle()
         {
-            if (Score._isGameOver)
+            if (Score._isGameOver || Pause.pause)
                 return;
             Instantiate(_obstaclePrefabs[Random.Range(0, _obstaclePrefabs.Length)], transform.position, Quaternion.identity).transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
             
